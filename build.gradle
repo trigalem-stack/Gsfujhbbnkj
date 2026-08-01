@@ -1,0 +1,41 @@
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+}
+
+base {
+    archivesName = 'Shield_status+Gamma-1.21.11-forge'
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+// НОВЫЙ БЛОК: Указываем Gradle, откуда качать библиотеки и сам Forge
+repositories {
+    mavenCentral()
+    maven {
+        name = 'Minecraft Forge'
+        url = 'https://maven.minecraftforge.net/'
+    }
+}
+
+minecraft {
+    mappings channel: 'official', version: '1.21.11'
+    copyIdeResources = true
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                shieldgamma {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.21.11-61.1.14'
+}
