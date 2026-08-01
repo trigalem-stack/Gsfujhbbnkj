@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[61,)"
+license="MIT"
+
+[[mods]]
+modId="shieldgamma"
+version="1.0.0"
+displayName="Shield Status & Gamma"
+authors="AI Studio"
+description="Applies a dynamic tint to shields based on cooldown status and provides a fullbright gamma toggle."
+
+[[dependencies.shieldgamma]]
+    modId="forge"
+    mandatory=true
+    versionRange="[61,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.shieldgamma]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.21.11,1.22)"
+    ordering="NONE"
+    side="BOTH"
